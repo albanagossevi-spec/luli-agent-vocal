@@ -1,0 +1,5 @@
+# LiveKit Configuration pour Next.js
+# Renommez ce fichier en .env.local
+LIVEKIT_URL=wss://agent-vocal-xr9dldnu.livekit.cloud
+LIVEKIT_API_KEY=APIP7znG8Niav3V
+LIVEKIT_API_SECRET=WEfX9gffsvPNtPdEBnqDRVMyolztG6qeQKV4ZsXqR6cD
