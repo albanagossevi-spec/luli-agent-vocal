@@ -16,8 +16,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copier tout le code de l'agent dans le conteneur cloud
 COPY . .
 
-# Ouvrir la porte de communication du conteneur
-EXPOSE 7860
+# Ouvrir la porte de communication du contene
+# ... (le reste du Dockerfile ne bouge pas) ...
 
-# Lancer le client WebRTC ET forcer le mini-serveur de santé sur le port 7860
-CMD ["python", "agent.py", "start", "--port", "7860"]
+# Dire à Docker qu'on ouvre le port par défaut de Render
+EXPOSE 10000
+
+# Lancer l'agent en lui injectant le port via la variable officielle de LiveKit
+CMD ["sh", "-c", "LIVEKIT_HEALTH_CHECK_PORT=10000 python agent.py start"]
+
+
